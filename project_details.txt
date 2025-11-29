@@ -1,0 +1,57 @@
+PROJECT OVERVIEW & PROBLEM STATEMENT
+------------------------------------
+Many organizations still rely on printed documents that are hand-signed and sealed. These physical signatures and stamps can be easily copied, scanned, and reproduced, making it simple for people to create fake documents, forged certificates, and backdated approvals. This creates serious problems, including financial fraud, false claims, misuse of authority, and submission of fake documents to government offices or companies.
+
+SOLUTION STATEMENT
+------------------
+To solve this, the proposed system introduces a secure **Digital Document Signing and Verification Platform**. Instead of printing documents and signing them manually, users can upload their documents to this platform and generate a unique digital signature.
+
+**Core Security Features:**
+1.  **Unique Identity**: Each signature includes the identity of the signer, the exact date and time, and a unique signature number (ID) that changes for every document.
+2.  **Tamper-Proof Verification**: A public verification portal allows anyone to enter the signature number and instantly verify:
+    *   Who signed the document.
+    *   When it was signed.
+    *   Whether the document is original or has been altered.
+3.  **Fraud Prevention**: This dramatically reduces cases of fake certificates and forged letters because the digital signature cannot be reproduced or modified without detection.
+
+**AI-Powered Enhancements (Current Implementation):**
+Beyond standard security, this project integrates **Generative AI (Google Gemini)** to make the signing process smarter and safer:
+1.  **Smart Document Intelligence**: The system "reads" the document before you sign. It automatically classifies the document type (e.g., NDA, Invoice), extracts key entities (Parties, Dates, Values), and provides an executive summary.
+2.  **Legal Risk Analysis (Legal Eagle)**: An AI agent scans the document for legal red flags (e.g., indefinite liability, missing terms) and assigns a risk score, protecting the user from signing harmful agreements.
+3.  **Smart Scout (Auto-Place)**: Using computer vision and text analysis, the system automatically detects visual signature fields ("Sign Here", "By:") and places the signature with a single click, eliminating manual effort.
+
+ARCHITECTURE
+------------
+The project is built on a modern, scalable architecture designed for security and performance:
+
+1.  **Frontend (Client)**:
+    *   **Next.js 14 (React)**: Provides a responsive, dark-mode user interface.
+    *   **Tailwind CSS**: Ensures a premium, accessible design.
+    *   **React-PDF**: Renders high-fidelity documents for review and placement.
+
+2.  **Backend (Server)**:
+    *   **FastAPI (Python)**: A high-performance web framework handling API requests.
+    *   **AI Agents**:
+        *   **Ingestion Agent**: Handles file processing and hashing.
+        *   **Gemini Agent**: Interfaces with Google Gemini 1.5 Flash for multimodal analysis.
+    *   **Stamping Engine**: Securely burns the digital signature and metadata onto the PDF.
+
+3.  **Verification Layer**:
+    *   **Public API**: Allows external systems (businesses, colleges) to integrate verification directly into their workflows.
+
+ESSENTIAL TOOLS AND UTILITIES
+-----------------------------
+*   **Google Gemini API**: The core AI engine for intelligence and risk analysis.
+*   **FastAPI**: For building the robust REST API.
+*   **Next.js**: For the frontend application.
+*   **PyPDF & ReportLab**: For PDF manipulation and stamping.
+*   **PostgreSQL / SQLite**: For storing signature metadata (deferred storage).
+
+CONCLUSION
+----------
+This project aims to create a simple, secure, and reliable way to sign and verify documents digitally. By combining **cryptographic security** (unique IDs, hashing) with **Advanced AI** (risk analysis, smart placement), it not only prevents fraud but also empowers users to sign with confidence and clarity. It bridges the gap between security and usability, making digital trust accessible to everyone.
+
+VALUE STATEMENT
+---------------
+"Secure by Design, Smart by Intelligence."
+We prevent fraud through unforgeable digital signatures while saving time and reducing risk through AI-driven document insights.
